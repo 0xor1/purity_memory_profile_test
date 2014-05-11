@@ -1,0 +1,8 @@
+name: purity_memory_profile_test
+version: 0.0.0
+author: Daniel Robinson <daniel.robinson.dart@gmail.com>
+description: simple purity app to profile memory usage.
+dependencies:
+  purity: '>=0.4.1 <0.5.0'
+dev_dependencies:
+  unittest: any
