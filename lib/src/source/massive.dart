@@ -2,17 +2,17 @@
  * Author:  Daniel Robinson http://github.com/0xor1
  */
 
-library purity.massive;
+part of purity.massive.source;
 
-import 'dart:math';
-import 'package:purity/purity.dart';
+class Massive extends Source implements IMassive {
 
-class Massive extends Source{
   final List<double> _memoryUser = new List<double>();
-  Massive(){
+
+  Massive() {
     var rand = new Random();
-    for(var i = 0; i < 10000000; i++){
+    for (var i = 0; i < 100000; i++) {
       _memoryUser.add(rand.nextDouble());
     }
   }
+
 }
