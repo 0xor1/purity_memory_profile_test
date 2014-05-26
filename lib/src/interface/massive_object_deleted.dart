@@ -4,4 +4,4 @@
 
 part of purity.massive.interface;
 
-class MassiveObjectDeletedEvent extends Event implements IMassiveObjectCreatedOrDeletedEvent{}
+class MassiveObjectDeleted extends Transmittable implements IMassiveObjectCreatedOrDeleted{}

@@ -4,7 +4,7 @@
 
 part of purity.massive.consumer;
 
-class Massive extends Consumer{
+class Massive extends purity.Consumer{
 
   final SizerPanel view = new SizerPanel('50px', '50px')
   ..style.background = '#6CD9CC'

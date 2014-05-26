@@ -15,14 +15,14 @@ class MassiveApp extends Source implements IMassiveApp {
     var massive = new Massive();
     _massives.add(massive);
     emitEvent(
-      new MassiveObjectCreatedEvent()
+      new MassiveObjectCreated()
       ..massive = massive);
   }
 
   void deleteAMassiveObject() {
     if(_massives.isNotEmpty){
       emitEvent(
-        new MassiveObjectDeletedEvent()
+        new MassiveObjectDeleted()
         ..massive = _massives.removeLast());
     }
   }

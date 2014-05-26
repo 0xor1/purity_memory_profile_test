@@ -4,6 +4,10 @@
 
 library purity.massive.source;
 
+@MirrorsUsed(targets: const[
+  MassiveApp
+  ], override: '*')
+import 'dart:mirrors';
 import 'dart:math';
 import 'package:purity/purity.dart';
 import 'package:purity_memory_profile_test/interface.dart';

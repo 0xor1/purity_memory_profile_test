@@ -4,7 +4,7 @@
 
 part of purity.massive.consumer;
 
-class MassiveApp extends Consumer {
+class MassiveApp extends purity.Consumer {
 
   dynamic get massiveApp => source;
 
@@ -43,12 +43,13 @@ class MassiveApp extends Consumer {
   }
 
   void _attachEventListeners(){
-    listen(source, MassiveObjectCreatedEvent, (MassiveObjectCreatedEvent event){
-      _massives.add(new Massive(event.massive));
+    listen(source, MassiveObjectCreated, (purity.Event<MassiveObjectCreated> event){
+      _massives.add(new Massive(event.data.massive));
       _massiveContainerInner.add(_massives.last.view);
     });
-    listen(source, MassiveObjectDeletedEvent, (MassiveObjectDeletedEvent event){
-      var massive = _massives.singleWhere((massive) => event.massive == massive.source);
+    listen(source, MassiveObjectDeleted, (purity.Event<MassiveObjectDeleted> event){
+      var massive = _massives.singleWhere((massive) => event.data.massive == massive.source);
+      _massives.remove(massive);
       massive.dispose();
       _massiveContainerInner.remove(massive.view);
     });
