@@ -21,7 +21,7 @@ void registerPurityMassiveTranTypes(){
   if(_purityMassiveTranTypesRegistered){return;}
   _purityMassiveTranTypesRegistered = true;
   registerTranTypes('purity.massive.interface','pmi',(){
-    registerTranSubtype('a', MassiveObjectCreated, () => new MassiveObjectCreated());
-    registerTranSubtype('b', MassiveObjectDeleted, () => new MassiveObjectDeleted());
+    registerTranSubtype(MassiveObjectCreated, () => new MassiveObjectCreated());
+    registerTranSubtype(MassiveObjectDeleted, () => new MassiveObjectDeleted());
   });
 }

@@ -4,4 +4,4 @@ author: Daniel Robinson <daniel.robinson.dart@gmail.com>
 description: simple purity app to profile memory usage.
 dependencies:
   controls_and_panels: '>=0.1.0 <0.2.0'
-  purity: '>=0.6.0 <0.7.0'
+  purity: '>=0.7.0 <0.8.0'
