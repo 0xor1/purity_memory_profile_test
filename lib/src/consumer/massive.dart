@@ -6,7 +6,7 @@ part of purity.massive.consumer;
 
 class Massive extends purity.Consumer{
 
-  final SizerPanel view = new SizerPanel('50px', '50px')
+  final AlignPanel view = new AlignPanel()..setSize('50px', '50px')
   ..style.background = '#6CD9CC'
   ..style.border = '1px solid black'
   ..style.margin = '5px'

@@ -12,17 +12,16 @@ class MassiveApp extends purity.Consumer {
 
   DivElement get html => _root.html;
 
-  final StackPanel _root = new StackPanel.vertical()
+  final StackPanel _root = new StackPanel(Orientation.VERTICAL)
   ..style.width = '100%'
   ..style.height = '100%';
-  final StackPanel _buttons = new StackPanel.horizontal()
+  final StackPanel _buttons = new StackPanel(Orientation.HORIZONTAL)
   ..style.height = '30px';
   final Button _createBtn = new Button.text('Create A Massive Object')
   ..style.margin = '5px';
   final Button _deleteBtn = new Button.text('Delete A Massive Object')
   ..style.margin = '5px';
-  final SizerPanel _massiveContainer = new SizerPanel('100%', 'calc(100% - 30px)');
-  final StackPanel _massiveContainerInner = new StackPanel.vertical()
+  final StackPanel _massiveContainerInner = new StackPanel(Orientation.HORIZONTAL)
   ..style.clear = 'none';
 
   MassiveApp(src) : super(src) {
@@ -38,8 +37,7 @@ class MassiveApp extends purity.Consumer {
       ..add(_createBtn)
       ..add(_deleteBtn))
     ..add(
-      _massiveContainer
-      ..add(_massiveContainerInner));
+      _massiveContainerInner);
   }
 
   void _attachEventListeners(){
