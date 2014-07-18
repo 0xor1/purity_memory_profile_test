@@ -23,7 +23,7 @@ void main(){
   initConsumerSettings(
     (massiveApp, proxyEndPoint){
       var view = new con.MassiveApp(massiveApp);
-      hostView.addNewClientView(proxyEndPoint, view.html);
+      hostView.addNewClientView(proxyEndPoint, view.html, 400);
     },
     (){});
 
