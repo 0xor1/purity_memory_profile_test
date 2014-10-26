@@ -17,11 +17,8 @@ part 'src/interface/massive_object_created.dart';
 part 'src/interface/massive_object_deleted.dart';
 
 bool _purityMassiveTranTypesRegistered = false;
-void registerPurityMassiveTranTypes(){
-  if(_purityMassiveTranTypesRegistered){return;}
-  _purityMassiveTranTypesRegistered = true;
-  registerTranTypes('purity.massive.interface','pmi',(){
-    registerTranSubtype(MassiveObjectCreated, () => new MassiveObjectCreated());
-    registerTranSubtype(MassiveObjectDeleted, () => new MassiveObjectDeleted());
-  });
-}
+final Registrar registerPurityMassiveTranTypes = generateRegistrar(
+    'purity.massive.interface','pmi', [
+    new TranRegistration.subtype(MassiveObjectCreated, () => new MassiveObjectCreated()),
+    new TranRegistration.subtype(MassiveObjectDeleted, () => new MassiveObjectDeleted()),
+  ]);
